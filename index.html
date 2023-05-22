@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c9dab565ca.js" crossorigin="anonymous"></script>
+    <script defer src="script.js"></script>
+    <title>Sudoku</title>
+</head>
+<body>
+    <div class="main-container" id="mainContainer">
+        <nav class="title-section">
+            <h1 class="game-title">Sudoku</h1>
+            <img class="color-mode" id="colorSelector" src="" alt="">
+            <i class="fa-solid fa-moon fa-lg" style="color: #0091da;"></i>
+        </nav>
+        <main class="instruction-section">
+            <h2 class="instructions1">Select a level to play</h2>
+            <button class="level-selector" id="levelSelector">Level 1</button>
+            <button class="level-selector" id="levelSelector">Level 2</button>
+            <button class="level-selector" id="levelSelector">Level 3</button>
+            <div class="game-board" id="gameBoard">
+                <div class="game-board-grid" id="gameBoardGrid">
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                    <div class="grid-item" id=""></div>
+                </div>
+            </div>
+            <div class="solve-button" id="solveButton">Solve!</div>  
+        </main>
+        <section class="number-selectors" id="numberSelectors">
+            <h2 class="number-buttons" id="number-buttons">Number Selectors</h2>
+            <div class="number-tiles" id="numberTiles">
+                <div class="number-tile" id="numberTile">1</div>
+                <div class="number-tile" id="numberTile">2</div>
+                <div class="number-tile" id="numberTile">3</div>
+                <div class="number-tile" id="numberTile">4</div>
+                <div class="number-tile" id="numberTile">5</div>
+                <div class="number-tile" id="numberTile">6</div>
+                <div class="number-tile" id="numberTile">7</div>
+                <div class="number-tile" id="numberTile">8</div>
+                <div class="number-tile" id="numberTile">9</div>
+            </div>
+            <h2 class="placeholder-selectors" id="placeholderSelectors">Placeholder Selectors</h2>
+            <div class="placeholder-buttons" id="placeholderButtons">
+                <div class="placeholder-tile" id="placeholderTile">1</div>
+                <div class="placeholder-tile" id="placeholderTile">2</div>
+                <div class="placeholder-tile" id="placeholderTile">3</div>
+                <div class="placeholder-tile" id="placeholderTile">4</div>
+                <div class="placeholder-tile" id="placeholderTile">5</div>
+                <div class="placeholder-tile" id="placeholderTile">6</div>
+                <div class="placeholder-tile" id="placeholderTile">7</div>
+                <div class="placeholder-tile" id="placeholderTile">8</div>
+                <div class="placeholder-tile" id="placeholderTile">9</div>
+            </div>
+        </section>
+        <footer class="credits" id="creditsSection">
+            <a href="github.com"><img class="git-repo-image" src="#" alt=""></a>
+            <p class="credit" id="credit">Created by JB</p>
+        </footer>
+    </div>
+</body>
+</html>

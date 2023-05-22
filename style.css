@@ -1,0 +1,32 @@
+/* 
+COLORS:
+color:rgb(0, 163, 161);
+color:rgb(0, 145, 218);
+color:rgb(0, 51, 141); */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Rowdies', cursive;
+}
+
+.game-title {
+    color:rgb(0, 145, 218);
+}
+
+.instructions1 {
+    color:rgb(0, 145, 218);
+}
+
+.number-buttons {
+    color:rgb(0, 145, 218);
+}
+
+.placeholder-selectors {
+    color:rgb(0, 145, 218);
+
+}

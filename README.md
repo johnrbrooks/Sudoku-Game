@@ -10,6 +10,9 @@ Create a responsive web app to generate Sudoku puzzles and allow the user to pla
 ## Git Repo
 [Git Repo](https://github.com/quark934/Sudoku-Game)
 
+## Wireframe
+[Wireframe](https://www.figma.com/file/HYcqy2Dh2Mqh0RbSNuLTBX/Sudoku-Game-Wireframe?type=whiteboard&node-id=0%3A1&t=DCz2ihIqRPE9vD0F-1)
+
 ## Functionality
 1. Refresh loads one of a collection of Sudoku puzzles
 2. The user is able to input numbers in empty squares with the use of either the keyboard or through buttons in the browser
