@@ -1,6 +1,3 @@
-//DOM Selections
-
-
 //Dark Mode
 
 const darkModeButton = document.querySelector('#darkModeButton')
@@ -124,6 +121,15 @@ hardButton.addEventListener('click', generateHard)
 function generateEasy() {
     let rowValues = []
 
+    gridBoxes.forEach(box => {
+        box.addEventListener('click', selectBox)
+    })
+
+    gridBoxes.forEach(box => {
+        box.innerHTML = ''
+        box.style.backgroundColor = 'rgb(175, 228, 255)'
+    })
+
     easyGameSetup.forEach(value => {
         gridRowValue = value.split('')
         rowValues.push(gridRowValue)
@@ -140,11 +146,25 @@ function generateEasy() {
         let gridItem = allValues[i]
         let gridBox = gridBoxes[i]
         gridBox.innerHTML = gridItem
+        if(gridBox.innerHTML !== '') {
+            gridBox.style.backgroundColor = 'rgb(0, 145, 218)'
+            gridBox.style.color = 'white'
+            gridBox.removeEventListener('click', selectBox)
+        }
     }
 }
 
 function generateMed() {
     let rowValues = []
+
+    gridBoxes.forEach(box => {
+        box.addEventListener('click', selectBox)
+    })
+
+    gridBoxes.forEach(box => {
+        box.innerHTML = ''
+        box.style.backgroundColor = 'rgb(175, 228, 255)'
+    })
 
     medGameSetup.forEach(value => {
         gridRowValue = value.split('')
@@ -162,11 +182,25 @@ function generateMed() {
         let gridItem = allValues[i]
         let gridBox = gridBoxes[i]
         gridBox.innerHTML = gridItem
+        if(gridBox.innerHTML !== '') {
+            gridBox.style.backgroundColor = 'rgb(0, 145, 218)'
+            gridBox.style.color = 'white'
+            gridBox.removeEventListener('click', selectBox)
+        }
     }
 }
 
 function generateHard() {
     let rowValues = []
+
+    gridBoxes.forEach(box => {
+        box.addEventListener('click', selectBox)
+    })
+
+    gridBoxes.forEach(box => {
+        box.innerHTML = ''
+        box.style.backgroundColor = 'rgb(175, 228, 255)'
+    })
 
     hardGameSetup.forEach(value => {
         gridRowValue = value.split('')
@@ -184,6 +218,11 @@ function generateHard() {
         let gridItem = allValues[i]
         let gridBox = gridBoxes[i]
         gridBox.innerHTML = gridItem
+        if(gridBox.innerHTML !== '') {
+            gridBox.style.backgroundColor = 'rgb(0, 145, 218)'
+            gridBox.style.color = 'white'
+            gridBox.removeEventListener('click', selectBox)
+        }
     }
 }
 
@@ -194,9 +233,7 @@ const gridBoxes = document.querySelectorAll('.grid-item')
 let selectedBox;
 let selectedNumber;
 
-gridBoxes.forEach(box => {
-    box.addEventListener('click', selectBox)
-})
+
 
 function selectBox (event) {
     gridBoxes.forEach(box => {
