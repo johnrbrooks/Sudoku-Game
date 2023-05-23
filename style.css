@@ -107,6 +107,10 @@ body {
     background-color:rgb(175, 228, 255);
 }
 
+.grid-item-select {
+    border:rgb(0, 145, 218) solid 3px; 
+}
+
 .grid-item:hover {
     cursor: pointer;
     border:rgb(0, 145, 218) solid 3px;

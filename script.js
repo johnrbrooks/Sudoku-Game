@@ -111,16 +111,51 @@ hardGameSolution = [
     '654931782'
 ]
 
-
 //Gameboard Generation
 
 
-//Gameboard Functionality
 
 
+//Gameboard/Number Tile Functionality
 
-//Number Tile Functionality
+const gridBoxes = document.querySelectorAll('.grid-item')
+let selectedBox;
+let selectedNumber;
 
+gridBoxes.forEach(box => {
+    box.addEventListener('click', selectBox)
+})
+
+function selectBox (event) {
+    gridBoxes.forEach(box => {
+        box.classList.remove('grid-item-select')
+    })
+    selectedBox = event.target
+    selectedBox.classList.add('grid-item-select')
+
+    const numberSelectors = document.querySelectorAll('#numberTile')
+    const placeholderSelectors = document.querySelectorAll('#placeholderTile')
+
+    numberSelectors.forEach(number => {
+        number.addEventListener('click', addNumber)
+    })
+
+    placeholderSelectors.forEach(placeholder => {
+        placeholder.addEventListener('click', addPlaceholder)
+    })
+
+    function addNumber (event) {
+        selectedNumber = event.target
+        selectedBox.innerHTML = selectedNumber.innerHTML
+        selectedBox.style.color = 'black'
+    }
+
+    function addPlaceholder (event) {
+        selectedPlaceholder = event.target
+        selectedBox.innerHTML = selectedPlaceholder.innerHTML
+        selectedBox.style.color = 'red'
+    }
+}
 
 
 //Game Solution Test Functionality
