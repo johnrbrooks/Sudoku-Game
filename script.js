@@ -6,7 +6,7 @@
 const darkModeButton = document.querySelector('#darkModeButton')
 const lightModeButton = document.querySelector('#lightModeButton')
 
-const levelButtons = document.querySelectorAll('#levelSelector')
+const levelButtons = document.querySelectorAll('.level-selector')
 const breakLines = document.querySelectorAll('#darkModeLines')
 
 darkModeButton.addEventListener('click', darkMode)
@@ -113,7 +113,79 @@ hardGameSolution = [
 
 //Gameboard Generation
 
+const easyButton = document.querySelector('#levelSelector1')
+const medButton = document.querySelector('#levelSelector2')
+const hardButton = document.querySelector('#levelSelector3')
 
+easyButton.addEventListener('click', generateEasy)
+medButton.addEventListener('click', generateMed)
+hardButton.addEventListener('click', generateHard)
+
+function generateEasy() {
+    let rowValues = []
+
+    easyGameSetup.forEach(value => {
+        gridRowValue = value.split('')
+        rowValues.push(gridRowValue)
+    })
+
+    let allValues = rowValues.flatMap(array => array)
+
+    for(let i = 0; i < allValues.length; i++) {
+        if(allValues[i].includes('-')) {
+            allValues[i] = allValues[i].replace('-', '')
+        }
+    }
+    for(let i = 0; i < allValues.length; i++) {
+        let gridItem = allValues[i]
+        let gridBox = gridBoxes[i]
+        gridBox.innerHTML = gridItem
+    }
+}
+
+function generateMed() {
+    let rowValues = []
+
+    medGameSetup.forEach(value => {
+        gridRowValue = value.split('')
+        rowValues.push(gridRowValue)
+    })
+
+    let allValues = rowValues.flatMap(array => array)
+
+    for(let i = 0; i < allValues.length; i++) {
+        if(allValues[i].includes('-')) {
+            allValues[i] = allValues[i].replace('-', '')
+        }
+    }
+    for(let i = 0; i < allValues.length; i++) {
+        let gridItem = allValues[i]
+        let gridBox = gridBoxes[i]
+        gridBox.innerHTML = gridItem
+    }
+}
+
+function generateHard() {
+    let rowValues = []
+
+    hardGameSetup.forEach(value => {
+        gridRowValue = value.split('')
+        rowValues.push(gridRowValue)
+    })
+
+    let allValues = rowValues.flatMap(array => array)
+
+    for(let i = 0; i < allValues.length; i++) {
+        if(allValues[i].includes('-')) {
+            allValues[i] = allValues[i].replace('-', '')
+        }
+    }
+    for(let i = 0; i < allValues.length; i++) {
+        let gridItem = allValues[i]
+        let gridBox = gridBoxes[i]
+        gridBox.innerHTML = gridItem
+    }
+}
 
 
 //Gameboard/Number Tile Functionality
@@ -132,7 +204,7 @@ function selectBox (event) {
     })
     selectedBox = event.target
     selectedBox.classList.add('grid-item-select')
-
+    
     const numberSelectors = document.querySelectorAll('#numberTile')
     const placeholderSelectors = document.querySelectorAll('#placeholderTile')
 

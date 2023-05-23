@@ -166,6 +166,13 @@ body {
 }
 
 .number-tile, .placeholder-tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 40px;
+    max-height: 40px;
+    min-width: 40px;
+    min-height: 40px;
     margin: 0 5px;
     padding: 10px 15px;
     border-radius: 8px;
@@ -216,10 +223,6 @@ body {
     border-top: rgb(0, 145, 218) 1px solid;
     border-bottom: rgb(0, 145, 218) 1px solid;
 }
-
-/* .fa-light {
-    display: 
-} */
 
 
 
