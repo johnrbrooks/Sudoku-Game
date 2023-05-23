@@ -7,18 +7,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Itim&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/c9dab565ca.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
     <title>Sudoku</title>
 </head>
 <body>
     <div class="main-container" id="mainContainer">
+
+        <!-- NAV SECTION -->
+
         <nav class="title-section">
             <h1 class="game-title">Sudoku</h1>
-            <i class="fa-solid fa-moon fa-2xl" style="color: #0091da;"></i>
-        </nav>
-        <hr class="nav-break">
+            <div class="nav-items">
+                <i class="fa-solid fa-moon fa-2xl" style="color: #0091da;" id="darkModeButton"></i>
+                <i class="fa-regular fa-sun fa-2xl sun-light" style="color: #0091da;" id="lightModeButton"></i>
+            </div>  
+            </nav>
+
+        <hr class="nav-break" id="darkModeLines">
+
+        <!-- INSTRUCTION SECTION -->
+
         <main class="instruction-section">
             <h2 class="instructions1">Select a level to play</h2>
             <div class="level-selector-buttons">
@@ -26,114 +36,123 @@
                 <button class="level-selector" id="levelSelector">Level 2</button>
                 <button class="level-selector" id="levelSelector">Level 3</button>
             </div>
+
+        <!-- GAME BOARD SECTION -->
+
             <div class="game-board" id="gameBoard">
                 <div class="game-board-grid" id="gameBoardGrid">
                     <div class="grid" id="grid1">
-                        <div class="grid-item" id="">1</div>
-                        <div class="grid-item" id="">2</div>
-                        <div class="grid-item" id="">3</div>
-                        <div class="grid-item" id="">4</div>
-                        <div class="grid-item" id="">5</div>
-                        <div class="grid-item" id="">6</div>
-                        <div class="grid-item" id="">7</div>
-                        <div class="grid-item" id="">8</div>
-                        <div class="grid-item" id="">9</div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
                     </div>
                     <div class="grid" id="grid2">
-                        <div class="grid-item" id="">1</div>
-                        <div class="grid-item" id="">2</div>
-                        <div class="grid-item" id="">3</div>
-                        <div class="grid-item" id="">4</div>
-                        <div class="grid-item" id="">5</div>
-                        <div class="grid-item" id="">6</div>
-                        <div class="grid-item" id="">7</div>
-                        <div class="grid-item" id="">8</div>
-                        <div class="grid-item" id="">9</div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
                     </div>
                     <div class="grid" id="grid3">
-                        <div class="grid-item" id="">1</div>
-                        <div class="grid-item" id="">2</div>
-                        <div class="grid-item" id="">3</div>
-                        <div class="grid-item" id="">4</div>
-                        <div class="grid-item" id="">5</div>
-                        <div class="grid-item" id="">6</div>
-                        <div class="grid-item" id="">7</div>
-                        <div class="grid-item" id="">8</div>
-                        <div class="grid-item" id="">9</div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
                     </div>
                     <div class="grid" id="grid4">
-                        <div class="grid-item" id="">1</div>
-                        <div class="grid-item" id="">2</div>
-                        <div class="grid-item" id="">3</div>
-                        <div class="grid-item" id="">4</div>
-                        <div class="grid-item" id="">5</div>
-                        <div class="grid-item" id="">6</div>
-                        <div class="grid-item" id="">7</div>
-                        <div class="grid-item" id="">8</div>
-                        <div class="grid-item" id="">9</div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
                     </div>
                     <div class="grid" id="grid5">
-                        <div class="grid-item" id="">1</div>
-                        <div class="grid-item" id="">2</div>
-                        <div class="grid-item" id="">3</div>
-                        <div class="grid-item" id="">4</div>
-                        <div class="grid-item" id="">5</div>
-                        <div class="grid-item" id="">6</div>
-                        <div class="grid-item" id="">7</div>
-                        <div class="grid-item" id="">8</div>
-                        <div class="grid-item" id="">9</div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
                     </div>
                     <div class="grid" id="grid6">
-                        <div class="grid-item" id="">1</div>
-                        <div class="grid-item" id="">2</div>
-                        <div class="grid-item" id="">3</div>
-                        <div class="grid-item" id="">4</div>
-                        <div class="grid-item" id="">5</div>
-                        <div class="grid-item" id="">6</div>
-                        <div class="grid-item" id="">7</div>
-                        <div class="grid-item" id="">8</div>
-                        <div class="grid-item" id="">9</div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
                     </div>
                     <div class="grid" id="grid7">
-                        <div class="grid-item" id="">1</div>
-                        <div class="grid-item" id="">2</div>
-                        <div class="grid-item" id="">3</div>
-                        <div class="grid-item" id="">4</div>
-                        <div class="grid-item" id="">5</div>
-                        <div class="grid-item" id="">6</div>
-                        <div class="grid-item" id="">7</div>
-                        <div class="grid-item" id="">8</div>
-                        <div class="grid-item" id="">9</div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
                     </div>
                     <div class="grid" id="grid8">
-                        <div class="grid-item" id="">1</div>
-                        <div class="grid-item" id="">2</div>
-                        <div class="grid-item" id="">3</div>
-                        <div class="grid-item" id="">4</div>
-                        <div class="grid-item" id="">5</div>
-                        <div class="grid-item" id="">6</div>
-                        <div class="grid-item" id="">7</div>
-                        <div class="grid-item" id="">8</div>
-                        <div class="grid-item" id="">9</div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
                     </div> 
                     <div class="grid" id="grid9">
-                        <div class="grid-item" id="">1</div>
-                        <div class="grid-item" id="">2</div>
-                        <div class="grid-item" id="">3</div>
-                        <div class="grid-item" id="">4</div>
-                        <div class="grid-item" id="">5</div>
-                        <div class="grid-item" id="">6</div>
-                        <div class="grid-item" id="">7</div>
-                        <div class="grid-item" id="">8</div>
-                        <div class="grid-item" id="">9</div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
+                        <div class="grid-item" id=""></div>
                     </div> 
                 </div>
             </div>
+
+        <!-- START & SOLVE BUTTONS -->
+
             <div class="buttons-container">
                 <div class="start-button" id="startButton">START</div>
                 <div class="solve-button" id="solveButton">SOLVE</div>  
             </div>
         </main>
+
+        <!-- TILE SELECTION BUTTONS -->
+
         <section class="number-selectors" id="numberSelectors">
             <h2 class="number-buttons" id="number-buttons">Number Selectors</h2>
             <div class="number-tiles" id="numberTiles">
@@ -160,9 +179,13 @@
                 <div class="placeholder-tile" id="placeholderTile">9</div>
             </div>
         </section>
-        <hr class="nav-break">
+
+        <hr class="nav-break" id="darkModeLines">
+
+    <!-- FOOTER SECTION -->
+
         <footer class="credits" id="creditsSection">
-            <a href="github.com"><i class="fa-brands fa-square-github fa-2xl" style="color: #00338d;"></i></a>
+            <a href="https://github.com/quark934/Sudoku-Game" target="_blank"><i class="fa-brands fa-square-github fa-2xl" style="color: #3399CC;"></i></a>
             <p class="credit" id="credit">Created by JB</p>
         </footer>
     </div>
