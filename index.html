@@ -29,8 +29,30 @@
 
         <!-- INSTRUCTION SECTION -->
 
-        <main class="instruction-section">
-            <h2 class="instructions1">Select a level to play</h2>
+        <main class="instruction-section" id="mainSection">
+            <div class="instructions-container">
+                <h2 class="instructions1">Select a level to play</h2>
+
+        <!-- TOOLTIP -->
+
+                <i class="fa-solid fa-question fa-sm tooltip" style="color: #0091da;">
+                    <span class="tooltip-text">
+                        <h3 class="tooltip-title">Instructions</h3>
+                        <p class="tooltip-instructions">1. Select a Difficulty Level</p>
+                        <p class="tooltip-instructions">2. Click a box, type a number to input</p>
+                        <p class="tooltip-instructions">3. Click a box, hold shift, and type a number to input a placeholder</p>
+                        <p class="tooltip-instructions">4. You know how to play Sudoku right?</p>
+                        <p class="or">OR</p>
+                        <p class="tooltip-instructions">1. Select a Difficulty Level</p>
+                        <p class="tooltip-instructions">2. Click a box, click a number to input</p>
+                        <p class="tooltip-instructions">3. Click a box, click a placeholder to input</p>
+                        <p class="tooltip-instructions">4. Play Sudoku</p>
+                    </span>
+                </i>
+            </div>
+
+        <!-- LEVEL SELECTION -->
+            
             <div class="level-selector-buttons">
                 <button class="level-selector" id="levelSelector1">Level 1</button>
                 <button class="level-selector" id="levelSelector2">Level 2</button>
@@ -145,9 +167,14 @@
 
         <!-- START & SOLVE BUTTONS -->
 
-            <div class="buttons-container">
+            <div class="buttons-container" id="buttonsContainer">
                 <div class="start-button" id="startButton">START</div>
                 <div class="solve-button" id="solveButton">SOLVE</div>  
+            </div>
+            <div class="timer-container" id="clock">
+                <h1 class="timer" id="timerElement">00:00:00</h1>
+                <i class="fa-solid fa-pause fa-2xl" id="pauseButton" style="color: #0091da;"></i>
+                <i class="fa-solid fa-play fa-xl" id="playButton" style="color: #0091da;"></i>
             </div>
         </main>
 
@@ -165,7 +192,7 @@
                 <div class="number-tile" id="numberTile">7</div>
                 <div class="number-tile" id="numberTile">8</div>
                 <div class="number-tile" id="numberTile">9</div>
-                <div class="number-tile empty" id="numberTile"></div>
+                <div class="number-tile empty" id="emptyTile"></div>
             </div>
             <h2 class="placeholder-selectors" id="placeholderSelectors">Placeholder Selectors</h2>
             <div class="placeholder-buttons" id="placeholderButtons">
@@ -178,7 +205,7 @@
                 <div class="placeholder-tile" id="placeholderTile">7</div>
                 <div class="placeholder-tile" id="placeholderTile">8</div>
                 <div class="placeholder-tile" id="placeholderTile">9</div>
-                <div class="placeholder-tile empty" id="placeholderTile"></div>
+                <div class="placeholder-tile empty" id="emptyTile"></div>
             </div>
         </section>
 

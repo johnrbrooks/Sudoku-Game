@@ -19,10 +19,12 @@ function darkMode () {
     })
     darkModeButton.classList.add('moon-dark')
     lightModeButton.classList.remove('sun-light')
+    timerElement.classList.add('timer-dark')
 }
 
 function lightMode () {
     document.body.style.backgroundColor = 'white'
+
     levelButtons.forEach(button => {
         button.classList.remove('dark-mode-buttons')
     })
@@ -31,6 +33,7 @@ function lightMode () {
     })
     lightModeButton.classList.add('sun-light')
     darkModeButton.classList.remove('moon-dark')
+    timerElement.classList.remove('timer-dark')
 }
 
 //Starter Puzzle Arrays
@@ -118,8 +121,6 @@ const hardButton = document.querySelector('#levelSelector3')
 easyButton.addEventListener('click', generateEasy)
 medButton.addEventListener('click', generateMed)
 hardButton.addEventListener('click', generateHard)
-
-let gameSolution;
 
 function generateEasy() {
     let squareValues = []
@@ -245,6 +246,7 @@ function selectBox (event) {
     
     const numberSelectors = document.querySelectorAll('#numberTile')
     const placeholderSelectors = document.querySelectorAll('#placeholderTile')
+    const backspaceSelectors = document.querySelectorAll('#emptyTile')
 
     numberSelectors.forEach(number => {
         number.addEventListener('click', addNumber)
@@ -253,6 +255,126 @@ function selectBox (event) {
     placeholderSelectors.forEach(placeholder => {
         placeholder.addEventListener('click', addPlaceholder)
     })
+
+    backspaceSelectors.forEach(selector => {
+        selector.addEventListener('click', removeInfo)
+    })
+
+    function addNumberByKey(event) {
+        console.log(event.key)
+        switch(event.key) {
+            case '1':
+                if (event.shiftKey) {
+                    selectedBox.innerHTML = '1'
+                    selectedBox.style.color = 'red'
+                }
+                else {
+                selectedBox.innerHTML = '1'
+                selectedBox.style.color = 'white'
+                selectedBox.style.backgroundColor = 'rgb(0, 51, 141)'
+                }
+                break;
+            case '2':
+                if (event.shiftKey) {
+                    selectedBox.innerHTML = '2'
+                    selectedBox.style.color = 'red'
+                }
+                else {
+                selectedBox.innerHTML = '2'
+                selectedBox.style.color = 'white'
+                selectedBox.style.backgroundColor = 'rgb(0, 51, 141)'
+                }
+                break;
+            case '3':
+                if (event.shiftKey) {
+                    selectedBox.innerHTML = '3'
+                    selectedBox.style.color = 'red'
+                }
+                else {
+                selectedBox.innerHTML = '3'
+                selectedBox.style.color = 'white'
+                selectedBox.style.backgroundColor = 'rgb(0, 51, 141)'
+                }
+                break;
+            case '4':
+                if (event.shiftKey) {
+                    selectedBox.innerHTML = '4'
+                    selectedBox.style.color = 'red'
+                }
+                else {
+                selectedBox.innerHTML = '4'
+                selectedBox.style.color = 'white'
+                selectedBox.style.backgroundColor = 'rgb(0, 51, 141)'
+                }
+                break;
+            case '5':
+                if (event.shiftKey) {
+                    selectedBox.innerHTML = '5'
+                    selectedBox.style.color = 'red'
+                }
+                else {
+                selectedBox.innerHTML = '5'
+                selectedBox.style.color = 'white'
+                selectedBox.style.backgroundColor = 'rgb(0, 51, 141)'
+                }
+                break;
+            case '6':
+                if (event.shiftKey) {
+                    selectedBox.innerHTML = '6'
+                    selectedBox.style.color = 'red'
+                }
+                else {
+                selectedBox.innerHTML = '6'
+                selectedBox.style.color = 'white'
+                selectedBox.style.backgroundColor = 'rgb(0, 51, 141)'
+                }
+                break;
+            case '7':
+                if (event.shiftKey) {
+                    selectedBox.innerHTML = '7'
+                    selectedBox.style.color = 'red'
+                }
+                else {
+                selectedBox.innerHTML = '7'
+                selectedBox.style.color = 'white'
+                selectedBox.style.backgroundColor = 'rgb(0, 51, 141)'
+                }
+                break;
+            case '8':
+                if (event.shiftKey) {
+                    selectedBox.innerHTML = '8'
+                    selectedBox.style.color = 'red'
+                }
+                else {
+                selectedBox.innerHTML = '8'
+                selectedBox.style.color = 'white'
+                selectedBox.style.backgroundColor = 'rgb(0, 51, 141)'
+                }
+                break;
+            case '9':
+                if (event.shiftKey) {
+                    selectedBox.innerHTML = '9'
+                    selectedBox.style.color = 'red'
+                }
+                else {
+                selectedBox.innerHTML = '9'
+                selectedBox.style.color = 'white'
+                selectedBox.style.backgroundColor = 'rgb(0, 51, 141)'
+                }
+                break;
+            case 'Backspace':
+                selectedBox.innerHTML = ''
+                selectedBox.style.backgroundColor = 'rgb(175, 228, 255)'
+                break;
+            case 'Enter':
+                testSolution()
+                break;
+            default:
+                break;
+        }
+    }
+
+    document.addEventListener('keydown', addNumberByKey)
 
     function addNumber (event) {
         selectedNumber = event.target
@@ -265,6 +387,11 @@ function selectBox (event) {
         selectedPlaceholder = event.target
         selectedBox.innerHTML = selectedPlaceholder.innerHTML
         selectedBox.style.color = 'red'
+    }
+
+    function removeInfo (event) {
+        selectedBox.innerHTML = ''
+        selectedBox.style.backgroundColor = 'rgb(175, 228, 255)'
     }
 }
 
@@ -329,6 +456,55 @@ function testSolution() {
     }
 }
 
+//Start Timer Functionality
+
+const startButton = document.querySelector('#startButton')
+const timerElement = document.querySelector('#timerElement')
+const pauseButton = document.querySelector('#pauseButton')
+const playButton = document.querySelector('#playButton')
+
+startButton.addEventListener('click', startTimer)
+
+function startTimer() {
+    let seconds = 0
+    let minutes = 0
+    let hours = 0
+
+    pauseButton.style.display = 'block'
+
+    startButton.removeEventListener('click', startTimer)
+
+    let interval = setInterval(runTimer, 1000)
+
+    function runTimer() {
+        seconds++
+        if(seconds === 60) {
+            minutes++
+            seconds = 0
+            if(minutes === 60) {
+                hours++
+                minutes = 0
+            }
+        }
+        let h = hours < 10 ? "0" + hours : hours
+        let m = minutes < 10 ? "0" + minutes : minutes
+        let s = seconds < 10 ? "0" + seconds : seconds
+        timerElement.innerHTML = `${h}:${m}:${s}`
+    }
+
+    pauseButton.addEventListener('click', () => {
+        clearInterval(interval)
+        pauseButton.style.display = 'none'
+        playButton.style.display = 'block'
+    })
+
+    playButton.addEventListener('click', () => {
+        interval = setInterval(runTimer, 1000)
+        playButton.style.display = 'none'
+        pauseButton.style.display = 'block'
+        runTimer()
+    })
+}
 
 
 

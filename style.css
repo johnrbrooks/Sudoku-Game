@@ -52,6 +52,48 @@ body {
     margin: 2rem 0rem 0.5rem 0;
 }
 
+.instructions-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.instructions1 {
+    margin: 0 1rem;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    font-family: 'Rowdies', cursive;
+    color: white;
+    background-color: rgb(0, 51, 141);
+    border-radius: 15px;
+    margin: 1rem;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+}
+
+.tooltip-title {
+    text-decoration: underline;
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.tooltip-instructions {
+    margin: 1rem 0;
+}
+
+.or {
+    margin: 1.5rem 0;
+}
+
 .instructions1, .number-buttons, .placeholder-selectors {
     color:rgb(0, 145, 218);
     font-size: 2rem;
@@ -80,7 +122,7 @@ body {
     background-color:rgb(175, 228, 255);
 }
 
-/* GAME BOARD*/
+/* GAMEBOARD*/
 
 .game-board-grid {
     display: grid;
@@ -147,6 +189,35 @@ body {
     color: white;
     background-color:rgb(0, 51, 141);
 }
+
+/* TIMER */
+
+.timer-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.timer {
+    font-size: 2.5rem;
+}
+
+.fa-pause {
+    display: none;
+    margin: 0 2rem;
+}
+
+.fa-play {
+    display: none;
+    margin: 0 2rem;
+}
+
+.timer-dark {
+    color: rgb(175, 228, 255);
+}
+
+
 
 /* NUMBER SELECTORS */
 
