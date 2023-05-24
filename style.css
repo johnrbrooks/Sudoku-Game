@@ -108,12 +108,12 @@ body {
 }
 
 .grid-item-select {
-    border:rgb(0, 145, 218) solid 3px; 
+    border:rgb(0, 51, 141) solid 3px; 
 }
 
 .grid-item:hover {
     cursor: pointer;
-    border:rgb(0, 145, 218) solid 3px;
+    border:rgb(0, 51, 141) solid 3px;
 }
 
 /* START & SOLVE BUTTONS */
@@ -223,9 +223,6 @@ body {
     border-top: rgb(0, 145, 218) 1px solid;
     border-bottom: rgb(0, 145, 218) 1px solid;
 }
-.test {
-    background-color:rgb(0, 128, 192);
 
-}
 
 

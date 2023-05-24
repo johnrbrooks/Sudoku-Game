@@ -35,77 +35,78 @@ function lightMode () {
 
 //Starter Puzzle Arrays
 
-easyGameSetup = [
-    '2-5--9--4',
-    '------3-7',
-    '7--856-1-',
-    '45-7-----',
-    '--9---1--',
-    '-----2-85',
-    '-2-418--6',
-    '6-8------',
-    '1--2--7-8'
+const easyGameSetup = [
+    '2-5---7--',
+    '--9---856',
+    '--43-7-1-',
+    '45---9---',
+    '7-------2',
+    '---1---85',
+    '-2-6-81--',
+    '418---2--',
+    '--6---7-8'
 ]
 
-medGameSetup = [
-    '--6-9-2--',
-    '---7-2---',
-    '-9-5-8-7-',
-    '9---3---6',
-    '75-----19',
-    '1---4---5',
-    '-1-3-9-8-',
-    '---2-1---',
-    '--9-8-1--'
+const medGameSetup = [
+    '--6----9-',
+    '-9-7-25-8',
+    '2------7-',
+    '9--75-1--',
+    '-3-----4-',
+    '--6-19--5',
+    '-1------9',
+    '3-92-1-8-',
+    '-8----1--'
 ]
 
-hardGameSetup = [
-    '---8-----',
-    '789-1---6',
+const hardGameSetup = [
+    '---789---',
+    '8---1---6',
     '-----61--',
-    '--7----5-',
-    '5-87-93-4',
-    '-4----2--',
-    '--32-----',
-    '8---7-439',
-    '-----1---'
+    '--75-8-4-',
+    '---7-9---',
+    '-5-3-42--',
+    '--38-----',
+    '2---7---1',
+    '---439---'
 ]
 
 //Solution Puzzle Arrays
 
-easyGameSolution = [
-    '215379864',
-    '986124357',
-    '734856219',
-    '452781693',
-    '869543172',
-    '371692485',
-    '527418936',
-    '648937521',
-    '193265748'
+const easyGameSolution = [
+    '215986734',
+    '379124856',
+    '864357219',
+    '452869371',
+    '781543692',
+    '693172485',
+    '527648193',
+    '418937265',
+    '936521748'
 ]
 
-medGameSolution = [
-    '876493251',
-    '345712968',
-    '291568473',
-    '982135746',
-    '754826319',
-    '163947825',
-    '417359682',
-    '529684137'
+const medGameSolution = [
+    '876345291',
+    '493712568',
+    '251968473',
+    '982754163',
+    '135826947',
+    '746319825',
+    '417638529',
+    '359271684',
+    '682594137'
 ]
 
-hardGameSolution = [
-    '165847923',
-    '789312546',
-    '432596178',
-    '297463851',
-    '518729364',
-    '346158297',
-    '973284615',
-    '821675439',
-    '654931782'
+const hardGameSolution = [
+    '165789432',
+    '847312596',
+    '923546178',
+    '297518346',
+    '463729158',
+    '851364297',
+    '973821654',
+    '284675931',
+    '615439782'
 ]
 
 //Gameboard Generation
@@ -118,8 +119,11 @@ easyButton.addEventListener('click', generateEasy)
 medButton.addEventListener('click', generateMed)
 hardButton.addEventListener('click', generateHard)
 
+let gameSolution;
+
 function generateEasy() {
-    let rowValues = []
+    let squareValues = []
+    gameSolution = easyGameSolution
 
     gridBoxes.forEach(box => {
         box.addEventListener('click', selectBox)
@@ -131,11 +135,11 @@ function generateEasy() {
     })
 
     easyGameSetup.forEach(value => {
-        gridRowValue = value.split('')
-        rowValues.push(gridRowValue)
+        gridSquareValue = value.split('')
+        squareValues.push(gridSquareValue)
     })
 
-    let allValues = rowValues.flatMap(array => array)
+    let allValues = squareValues.flatMap(array => array)
 
     for(let i = 0; i < allValues.length; i++) {
         if(allValues[i].includes('-')) {
@@ -155,7 +159,8 @@ function generateEasy() {
 }
 
 function generateMed() {
-    let rowValues = []
+    let squareValues = []
+    let gameSolution = medGameSolution
 
     gridBoxes.forEach(box => {
         box.addEventListener('click', selectBox)
@@ -167,11 +172,11 @@ function generateMed() {
     })
 
     medGameSetup.forEach(value => {
-        gridRowValue = value.split('')
-        rowValues.push(gridRowValue)
+        gridSquareValue = value.split('')
+        squareValues.push(gridSquareValue)
     })
 
-    let allValues = rowValues.flatMap(array => array)
+    let allValues = squareValues.flatMap(array => array)
 
     for(let i = 0; i < allValues.length; i++) {
         if(allValues[i].includes('-')) {
@@ -191,7 +196,9 @@ function generateMed() {
 }
 
 function generateHard() {
-    let rowValues = []
+    let squareValues = []
+    let gameSolution = hardGameSolution
+
 
     gridBoxes.forEach(box => {
         box.addEventListener('click', selectBox)
@@ -203,11 +210,11 @@ function generateHard() {
     })
 
     hardGameSetup.forEach(value => {
-        gridRowValue = value.split('')
-        rowValues.push(gridRowValue)
+        gridSquareValue = value.split('')
+        squareValues.push(gridSquareValue)
     })
 
-    let allValues = rowValues.flatMap(array => array)
+    let allValues = squareValues.flatMap(array => array)
 
     for(let i = 0; i < allValues.length; i++) {
         if(allValues[i].includes('-')) {
@@ -233,8 +240,6 @@ const gridBoxes = document.querySelectorAll('.grid-item')
 let selectedBox;
 let selectedNumber;
 
-
-
 function selectBox (event) {
     gridBoxes.forEach(box => {
         box.classList.remove('grid-item-select')
@@ -256,7 +261,8 @@ function selectBox (event) {
     function addNumber (event) {
         selectedNumber = event.target
         selectedBox.innerHTML = selectedNumber.innerHTML
-        selectedBox.style.color = 'black'
+        selectedBox.style.color = 'white'
+        selectedBox.style.backgroundColor = 'rgb(0, 51, 141)'
     }
 
     function addPlaceholder (event) {
@@ -268,6 +274,48 @@ function selectBox (event) {
 
 
 //Game Solution Test Functionality
+const solveButton = document.querySelector('#solveButton')
+
+solveButton.addEventListener('click', testSolution)
+
+//CONVERT SOLUTION ARRAY TO NECESSARY FORMAT
+
+/* function convertSolution(solution) {
+    let squareValues = []
+
+    solution.forEach(value => {
+        gridSquareValue = value.split('')
+        squareValues.push(gridSquareValue)
+    })
+
+    let allValues = squareValues.flatMap(array => array)
+
+} */
+
+function testSolution() {
+    let currentState = []
+    gridBoxes.forEach(box => {
+        let boxState = box.innerHTML
+        currentState.push(`${boxState}`)
+    })
+    if(currentState.includes('')) {
+        alert('There are still empty squares!')
+    }
+
+    let squareValues = []
+
+    easyGameSolution.forEach(value => {
+        gridSquareValue = value.split('')
+        squareValues.push(gridSquareValue)
+    })
+
+    let allValues = squareValues.flatMap(array => array)
+
+    if(allValues === currentState) {
+        alert('You win!')
+    }
+}
+
 
 
 
