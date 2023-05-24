@@ -123,7 +123,6 @@ let gameSolution;
 
 function generateEasy() {
     let squareValues = []
-    gameSolution = easyGameSolution
 
     gridBoxes.forEach(box => {
         box.addEventListener('click', selectBox)
@@ -160,7 +159,6 @@ function generateEasy() {
 
 function generateMed() {
     let squareValues = []
-    let gameSolution = medGameSolution
 
     gridBoxes.forEach(box => {
         box.addEventListener('click', selectBox)
@@ -197,8 +195,6 @@ function generateMed() {
 
 function generateHard() {
     let squareValues = []
-    let gameSolution = hardGameSolution
-
 
     gridBoxes.forEach(box => {
         box.addEventListener('click', selectBox)
@@ -274,26 +270,14 @@ function selectBox (event) {
 
 
 //Game Solution Test Functionality
+
 const solveButton = document.querySelector('#solveButton')
 
 solveButton.addEventListener('click', testSolution)
 
-//CONVERT SOLUTION ARRAY TO NECESSARY FORMAT
-
-/* function convertSolution(solution) {
-    let squareValues = []
-
-    solution.forEach(value => {
-        gridSquareValue = value.split('')
-        squareValues.push(gridSquareValue)
-    })
-
-    let allValues = squareValues.flatMap(array => array)
-
-} */
-
 function testSolution() {
     let currentState = []
+
     gridBoxes.forEach(box => {
         let boxState = box.innerHTML
         currentState.push(`${boxState}`)
@@ -301,28 +285,51 @@ function testSolution() {
     if(currentState.includes('')) {
         alert('There are still empty squares!')
     }
+    else {
+        let easySolution = []
 
-    let squareValues = []
+        easyGameSolution.forEach(value => {
+            gridSquareValue = value.split('')
+            easySolution.push(gridSquareValue)
+        })
+    
+        let potentialSolution1 = easySolution.flatMap(array => array)
 
-    easyGameSolution.forEach(value => {
-        gridSquareValue = value.split('')
-        squareValues.push(gridSquareValue)
-    })
+        let medSolution = []
 
-    let allValues = squareValues.flatMap(array => array)
+        medGameSolution.forEach(value => {
+            gridSquareValue = value.split('')
+            medSolution.push(gridSquareValue)
+        })
+    
+        let potentialSolution2 = medSolution.flatMap(array => array)
 
-    if(allValues === currentState) {
-        alert('You win!')
+        let hardSolution = []
+
+        hardGameSolution.forEach(value => {
+            gridSquareValue = value.split('')
+            hardSolution.push(gridSquareValue)
+        })
+    
+        let potentialSolution3 = hardSolution.flatMap(array => array)
+    
+
+        if(potentialSolution1.join('') === currentState.join('')) {
+            alert('You win!')
+        }
+        else if(potentialSolution2.join('') === currentState.join('')) {
+            alert('You win!')
+        }
+        else if(potentialSolution3.join('') === currentState.join('')) {
+            alert('You win!')
+        }
+        else {
+            alert('Your solution is not correct.')
+        }
     }
 }
 
 
 
-
-//Winner Declaration
-
-
-
-//Level Select
 
 
