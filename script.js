@@ -126,6 +126,7 @@ let winner = false
 
 function generateEasy() {
     let squareValues = []
+    winner = false
 
     gridBoxes.forEach(box => {
         box.addEventListener('click', selectBox)
@@ -162,6 +163,7 @@ function generateEasy() {
 
 function generateMed() {
     let squareValues = []
+    winner = false
 
     gridBoxes.forEach(box => {
         box.addEventListener('click', selectBox)
@@ -198,6 +200,7 @@ function generateMed() {
 
 function generateHard() {
     let squareValues = []
+    winner = false
 
     gridBoxes.forEach(box => {
         box.addEventListener('click', selectBox)
@@ -231,7 +234,6 @@ function generateHard() {
         }
     }
 }
-
 
 //Gameboard/Number Tile Functionality
 
@@ -444,16 +446,16 @@ function testSolution() {
     
 
         if(potentialSolution1.join('') === currentState.join('')) {
-            alert('You win!')
             winner = true
+            ifWinner()
         }
         else if(potentialSolution2.join('') === currentState.join('')) {
-            alert('You win!')
             winner = true
+            ifWinner()
         }
         else if(potentialSolution3.join('') === currentState.join('')) {
-            alert('You win!')
             winner = true
+            ifWinner()
         }
         else {
             alert('Your solution is not correct.')
@@ -471,6 +473,7 @@ const playButton = document.querySelector('#playButton')
 startButton.addEventListener('click', startTimer)
 
 function startTimer() {
+
     let seconds = 0
     let minutes = 0
     let hours = 0
@@ -484,7 +487,7 @@ function startTimer() {
 
         startButton.removeEventListener('click', startTimer)
 
-        let interval = setInterval(runTimer, 1000)
+        interval = setInterval(runTimer, 1000)
 
         function runTimer() {
             seconds++
@@ -520,6 +523,27 @@ function startTimer() {
             runTimer()
         })
     }
+}
+
+//Winner Declaration
+
+const winnerModal = document.querySelector('.winner-container')
+const closeModalButton = document.querySelector('.close-button')
+const winnerTime = document.querySelector('.time-winner')
+
+function ifWinner() {
+    winnerModal.style.display = 'block'
+    
+    closeModalButton.addEventListener('click', () => {
+        winnerModal.style.display = 'none'
+        winner = false
+    })
+
+    time = timerElement.innerHTML
+
+    winnerTime.innerHTML = `${time}`
+
+    startButton.addEventListener('click', startTimer)
 }
 
 
