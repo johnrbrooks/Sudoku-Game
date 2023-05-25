@@ -297,7 +297,9 @@ body {
 
 .winner-container {
     display: none;
-    background: linear-gradient(rgb(175, 228, 255), rgb(0, 145, 218));
+    background-color:rgb(0, 145, 218);
+    background-image: url('https://media3.giphy.com/media/26tOZ42Mg6pbTUPHW/giphy.gif');
+    background-blend-mode: multiply;
     border: black solid 3px;
     border-radius: 15px;
     position: fixed;
@@ -313,6 +315,7 @@ body {
 
 .close-button {
     margin: 0.75rem;
+    color: white;
 }
 
 .close-button:hover {
@@ -327,6 +330,7 @@ body {
     align-items: center;
     padding: 0 0.5rem;
     margin-bottom: 1.5rem;
+    color: white;
 }
 
 .winner-declaration, .winner-instructions, .time-winner {

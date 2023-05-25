@@ -4,6 +4,9 @@ A browser playable Sudoku Game and Generator.
 ## Goal
 Create a responsive web app to generate Sudoku puzzles and allow the user to play and complete them.
 
+## Surge Deployment Link
+[Deployment Link](cold-organization.surge.sh)
+
 ## Trello Board for Project Plan
 [Project Management Plan](https://trello.com/b/3X7vCaYw/sudoku-game)
 
