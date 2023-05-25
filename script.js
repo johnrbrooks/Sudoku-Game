@@ -122,6 +122,8 @@ easyButton.addEventListener('click', generateEasy)
 medButton.addEventListener('click', generateMed)
 hardButton.addEventListener('click', generateHard)
 
+let winner = false
+
 function generateEasy() {
     let squareValues = []
 
@@ -443,12 +445,15 @@ function testSolution() {
 
         if(potentialSolution1.join('') === currentState.join('')) {
             alert('You win!')
+            winner = true
         }
         else if(potentialSolution2.join('') === currentState.join('')) {
             alert('You win!')
+            winner = true
         }
         else if(potentialSolution3.join('') === currentState.join('')) {
             alert('You win!')
+            winner = true
         }
         else {
             alert('Your solution is not correct.')
@@ -470,40 +475,51 @@ function startTimer() {
     let minutes = 0
     let hours = 0
 
-    pauseButton.style.display = 'block'
-
-    startButton.removeEventListener('click', startTimer)
-
-    let interval = setInterval(runTimer, 1000)
-
-    function runTimer() {
-        seconds++
-        if(seconds === 60) {
-            minutes++
-            seconds = 0
-            if(minutes === 60) {
-                hours++
-                minutes = 0
-            }
-        }
-        let h = hours < 10 ? "0" + hours : hours
-        let m = minutes < 10 ? "0" + minutes : minutes
-        let s = seconds < 10 ? "0" + seconds : seconds
-        timerElement.innerHTML = `${h}:${m}:${s}`
+    if(winner === true) {
+        return;
     }
-
-    pauseButton.addEventListener('click', () => {
-        clearInterval(interval)
-        pauseButton.style.display = 'none'
-        playButton.style.display = 'block'
-    })
-
-    playButton.addEventListener('click', () => {
-        interval = setInterval(runTimer, 1000)
-        playButton.style.display = 'none'
+    
+    else {
         pauseButton.style.display = 'block'
-        runTimer()
-    })
+
+        startButton.removeEventListener('click', startTimer)
+
+        let interval = setInterval(runTimer, 1000)
+
+        function runTimer() {
+            seconds++
+            if(seconds === 60) {
+                minutes++
+                seconds = 0
+                if(minutes === 60) {
+                    hours++
+                    minutes = 0
+                }
+            }
+
+            if(winner === true){
+                clearInterval(interval)
+            }
+
+            let h = hours < 10 ? "0" + hours : hours
+            let m = minutes < 10 ? "0" + minutes : minutes
+            let s = seconds < 10 ? "0" + seconds : seconds
+            timerElement.innerHTML = `${h}:${m}:${s}`
+        }
+
+        pauseButton.addEventListener('click', () => {
+            clearInterval(interval)
+            pauseButton.style.display = 'none'
+            playButton.style.display = 'block'
+        })
+
+        playButton.addEventListener('click', () => {
+            interval = setInterval(runTimer, 1000)
+            playButton.style.display = 'none'
+            pauseButton.style.display = 'block'
+            runTimer()
+        })
+    }
 }
 
 
