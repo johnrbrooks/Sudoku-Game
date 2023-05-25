@@ -355,6 +355,14 @@ body {
         padding: .5rem 3rem;
         font-size: 1.25rem;
     }
+
+    .timer {
+        font-size: 2rem;
+    }
+
+    .timer-container {
+        margin-bottom: 0.75rem;
+    }
 }
 
 @media screen and (max-width: 415px) {
@@ -395,9 +403,17 @@ body {
     }
 
     .solve-button, .start-button {
-        margin: 2rem .5rem;
+        margin: 1rem .5rem;
         padding: .5rem 3rem;
         font-size: 1rem;
+    }
+
+    .timer-container {
+        margin-bottom: 0.5rem;
+    }
+
+    .timer {
+        font-size: 2rem;
     }
 
     .number-tile, .placeholder-tile {
