@@ -1,4 +1,4 @@
-//Dark Mode and Light Mode
+//Dark Mode and Light Mode 
 
 const darkModeButton = document.querySelector('#darkModeButton')
 const lightModeButton = document.querySelector('#lightModeButton')
