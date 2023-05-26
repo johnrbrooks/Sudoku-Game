@@ -271,6 +271,7 @@ function selectBox (event) {
                 if (event.shiftKey) {
                     selectedBox.innerHTML = '1'
                     selectedBox.style.color = 'red'
+                    selectedBox.style.backgroundColor = 'rgb(175, 228, 255)'
                 }
                 else {
                 selectedBox.innerHTML = '1'
@@ -282,6 +283,7 @@ function selectBox (event) {
                 if (event.shiftKey) {
                     selectedBox.innerHTML = '2'
                     selectedBox.style.color = 'red'
+                    selectedBox.style.backgroundColor = 'rgb(175, 228, 255)'
                 }
                 else {
                 selectedBox.innerHTML = '2'
@@ -293,6 +295,7 @@ function selectBox (event) {
                 if (event.shiftKey) {
                     selectedBox.innerHTML = '3'
                     selectedBox.style.color = 'red'
+                    selectedBox.style.backgroundColor = 'rgb(175, 228, 255)'
                 }
                 else {
                 selectedBox.innerHTML = '3'
@@ -304,6 +307,7 @@ function selectBox (event) {
                 if (event.shiftKey) {
                     selectedBox.innerHTML = '4'
                     selectedBox.style.color = 'red'
+                    selectedBox.style.backgroundColor = 'rgb(175, 228, 255)'
                 }
                 else {
                 selectedBox.innerHTML = '4'
@@ -315,6 +319,7 @@ function selectBox (event) {
                 if (event.shiftKey) {
                     selectedBox.innerHTML = '5'
                     selectedBox.style.color = 'red'
+                    selectedBox.style.backgroundColor = 'rgb(175, 228, 255)'
                 }
                 else {
                 selectedBox.innerHTML = '5'
@@ -326,6 +331,7 @@ function selectBox (event) {
                 if (event.shiftKey) {
                     selectedBox.innerHTML = '6'
                     selectedBox.style.color = 'red'
+                    selectedBox.style.backgroundColor = 'rgb(175, 228, 255)'
                 }
                 else {
                 selectedBox.innerHTML = '6'
@@ -337,6 +343,7 @@ function selectBox (event) {
                 if (event.shiftKey) {
                     selectedBox.innerHTML = '7'
                     selectedBox.style.color = 'red'
+                    selectedBox.style.backgroundColor = 'rgb(175, 228, 255)'
                 }
                 else {
                 selectedBox.innerHTML = '7'
@@ -348,6 +355,7 @@ function selectBox (event) {
                 if (event.shiftKey) {
                     selectedBox.innerHTML = '8'
                     selectedBox.style.color = 'red'
+                    selectedBox.style.backgroundColor = 'rgb(175, 228, 255)'
                 }
                 else {
                 selectedBox.innerHTML = '8'
@@ -359,6 +367,7 @@ function selectBox (event) {
                 if (event.shiftKey) {
                     selectedBox.innerHTML = '9'
                     selectedBox.style.color = 'red'
+                    selectedBox.style.backgroundColor = 'rgb(175, 228, 255)'
                 }
                 else {
                 selectedBox.innerHTML = '9'
@@ -391,6 +400,7 @@ function selectBox (event) {
         selectedPlaceholder = event.target
         selectedBox.innerHTML = selectedPlaceholder.innerHTML
         selectedBox.style.color = 'red'
+        selectedBox.style.backgroundColor = 'rgb(175, 228, 255)'
     }
 
     function removeInfo (event) {

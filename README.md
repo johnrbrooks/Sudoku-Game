@@ -1,5 +1,5 @@
 # Sudoku-Game
-A browser playable Sudoku Game and Generator.
+A browser playable Sudoku Game.
 
 ## Goal
 Create a responsive web app to generate Sudoku puzzles and allow the user to play and complete them.
@@ -9,9 +9,6 @@ Create a responsive web app to generate Sudoku puzzles and allow the user to pla
 
 ## Trello Board for Project Plan
 [Project Management Plan](https://trello.com/b/3X7vCaYw/sudoku-game)
-
-## Git Repo
-[Git Repo](https://github.com/quark934/Sudoku-Game)
 
 ## Wireframe
 [Wireframe](https://www.figma.com/file/HYcqy2Dh2Mqh0RbSNuLTBX/Sudoku-Game-Wireframe?type=whiteboard&node-id=0%3A1&t=DCz2ihIqRPE9vD0F-1)
