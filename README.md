@@ -14,9 +14,9 @@ Create a responsive web app to generate Sudoku puzzles and allow the user to pla
 [Wireframe](https://www.figma.com/file/HYcqy2Dh2Mqh0RbSNuLTBX/Sudoku-Game-Wireframe?type=whiteboard&node-id=0%3A1&t=DCz2ihIqRPE9vD0F-1)
 
 ## Functionality
-1. Refresh loads one of a collection of Sudoku puzzles
+1. Level Selection loads a puzzle of that level of difficulty
 2. The user is able to input numbers in empty squares with the use of either the keyboard or through buttons in the browser
-3. The app will check to see if the user has won once all squares have been filled in
+3. The app will check to see if the user has won once all squares have been filled and the solve button is clicked.
 4. All originally empty squares must be editable throughout gameplay
 5. There should be an option to place numbers of a different color into squares as temporary placeholders (guesses) to be tested during gameplay
 6. The puzzles should be of varying difficulty and the user should be able to select the difficulty of the puzzle they would like to attempt
@@ -25,18 +25,19 @@ Create a responsive web app to generate Sudoku puzzles and allow the user to pla
 9. Further functionality should be considered throughout creation...
 
 ## Secondary Functionality...
-1. Force user to input their name and choose a skill level before playing
-2. Maintain and record a scoreboard for that individual
-3. Possibly show a percent completion of the board that updates as the user plays...
+1. Add a timer to keep track of the length of time it takes to complete a puzzle
+2. Display a modal for a successful completion of the puzzle
+3. Add a Light and Dark mode
 
 ## Project Management Tasks
 
 ### HTML
 1. Titles
 2. Gameplay Instructions
-3. Buttons for level of play, restart, possibly a scoreboard...
+3. Buttons for level of play, solve puzzle, and possibly start timer...
 4. Gameboard
 5. Buttons for input of numbers into selected square
+6. Signature and Repo link
 
 
 ### CSS
@@ -47,8 +48,8 @@ Create a responsive web app to generate Sudoku puzzles and allow the user to pla
 
 ### JS (Main Functionality)
 1. Array creation for Sudoku Puzzles and Solutions
-2. Variable selections for all DOM elements (Possibly utilize JQuery..)
-3. Generation of gameboard on page load **AND** when a user selects a different level of puzzle
+2. Variable selections for all DOM elements
+3. Generation of gameboard on level select **AND** when a user selects a different level of puzzle
 4. Ensure that game win tests are checking against the proper solution array
 5. Ensure all gameboard tiles that should be are accessible
 6. Ensure number buttons allow the user to input the specified number into the selected tile
@@ -57,6 +58,6 @@ Create a responsive web app to generate Sudoku puzzles and allow the user to pla
 9. Construct game win tests to ensure when the game is completed correctly that the winner is declared
 
 ### JS (Secondary Functionality)
-1. Make a new page generate with the gameboard and information AFTER the user inputs their name and skill level
-2. Keep track of successful solutions
-3. Keep track of the amount of the board that has been filled in and the percent completion based on that and display it on screen
+1. Add a timer to track the length of time it takes the player to complete a game
+2. Add a Light and Dark mode functionality
+3. Add an instruction modal to explain the functionality of the game
